@@ -7,8 +7,8 @@ use log::*;
 
 fn main() {
     let mut bot = BotMessenger::new();
-    //bot.get_conf().set_token_fb_page(env!("TOKEN_FB_PAGE"));
-    //bot.get_conf().set_token_webhook(env!("TOKEN"));
+    bot.get_conf().set_token_fb_page(env!("TOKEN_FB"));
+    bot.get_conf().set_token_webhook(env!("TOKEN"));
     let mut block = Block::new("Hello");
         block.add(Arc::new(CartBox::new(Arc::new(|x: &BotUser| {
            let mes = Message::new("Hello mother fucker");
