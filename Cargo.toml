@@ -6,6 +6,6 @@ edition = "2018"
 
 
 [dependencies]
-botMessenger = {path = "../botMessenger"}
+botMessenger = {git = "https://github.com/CyberWolf37/bot.git"}
 log = "0.4.11"
 env_logger = "0.8.1"
