@@ -16,7 +16,13 @@ fn main() {
            let mes = Message::new("Hello mother fucker");
            mes.send(x);
         }))));
-        bot.add_block(block);
+    let block_start = Block::new("#start");
+        block.add(Arc::new(CartBox::new(Arc::new(|x: &BotUser| {
+           let mes = Message::new("Start cv");
+           mes.send(x);
+        }))));
+        bot.add_block(block)
+           .add_block(block_start);
         println!("{}",bot.get_conf());
         bot.launch();
 }
