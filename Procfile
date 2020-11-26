@@ -1,1 +1,1 @@
-web: ./target/release/cv-bot
+web: ./target/release/cv
