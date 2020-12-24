@@ -10,6 +10,7 @@ fn main() {
 
     let TOKEN_FB = &std::env::var("TOKEN_FB").unwrap_or("MamaGuriba".to_string());
     let TOKEN_WH = &std::env::var("TOKEN").unwrap_or("MamaGuriba".to_string());
+    let PORT = std::env::var("PORT").unwrap_or("7878".to_string()).parse::<u16>().unwrap_or(7878);
 
     BotMessenger::new()
             .block(Block::new("Hello")
@@ -28,5 +29,6 @@ fn main() {
                     .text("New start user")))
             .with_token_fb(&TOKEN_FB)
             .with_token_wh(&TOKEN_WH)
+            .with_port(PORT)
             .launch();
 }
