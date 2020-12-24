@@ -1,29 +1,32 @@
 use botMessenger::{utils , api, BotMessenger};
 
-use utils::{Block,CartBox,BotUser};
-use api::{Message,ApiMessage};
-use std::sync::Arc;
-use log::*;
+use utils::block::Block;
+use utils::block::CartBox;
+use api::card::Card;
+use api::card::CardGeneric;
+use api::button::Button;
 
 fn main() {
-    let mut bot = BotMessenger::new();
-    bot.get_conf_mut().set_token_fb_page(&std::env::var("TOKEN_FB").unwrap_or("MamaGuriba".to_string()));
-    bot.get_conf_mut().set_token_webhook(&std::env::var("TOKEN").unwrap_or("MamaGuriba".to_string()));
-    bot.get_conf_mut().set_port(std::env::var("PORT").unwrap_or("7878".to_string()).parse::<u16>().unwrap_or(7878));
 
-    let message = Message::new(bot.get_conf().get_token_fb_page());
-    let message_1 = Message::new(bot.get_conf().get_token_fb_page());
+    let TOKEN_FB = &std::env::var("TOKEN_FB").unwrap_or("MamaGuriba".to_string());
+    let TOKEN_WH = &std::env::var("TOKEN").unwrap_or("MamaGuriba".to_string());
 
-    let mut block = Block::new("Hello");
-        block.add(Arc::new(CartBox::new(Arc::new(move |x: &BotUser| {
-            message.send(x,"Hello mother fucker");
-        }))));
-    let block_start = Block::new("#start");
-        block.add(Arc::new(CartBox::new(Arc::new(move |x: &BotUser| {
-            message_1.send(x,"Start cv");
-        }))));
-        bot.add_block(block)
-           .add_block(block_start);
-        println!("{}",bot.get_conf());
-        bot.launch();
+    BotMessenger::new()
+            .block(Block::new("Hello")
+                .cartBox(CartBox::new()
+                    .text("Hello new user"))
+                .cartBox(CartBox::new()
+                    .text("It's a new day")
+                    .button_postback("Push", "Hello"))
+                .cartBox(CartBox::new()
+                    .card(CardGeneric::new("Hello")
+                        .button(Button::new_button_pb("Welcom back Mr potter", "Hello"))
+                        .image("https://images.ladepeche.fr/api/v1/images/view/5c34fb833e454650457f60ce/large/image.jpg")
+                        .subtitle("Bouyah"))))
+            .block(Block::new("#Start")
+                .cartBox(CartBox::new()
+                    .text("New start user")))
+            .with_token_fb(&TOKEN_FB)
+            .with_token_wh(&TOKEN_WH)
+            .launch();
 }
