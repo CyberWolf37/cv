@@ -4,7 +4,7 @@ use utils::block::Block;
 use utils::block::CartBox;
 use api::card::Card;
 use api::card::CardGeneric;
-use api::card::CardButton;
+use api::card::CardButtons;
 use api::button::Button;
 
 fn main() {
@@ -28,26 +28,15 @@ fn main() {
 
     let block_cv = Block::new("#CvStart")
                         .cartBox(CartBox::new()
-                            .card(CardButton::new()
+                            .card(CardButtons::new("lol")
                                 .button(Button::new_button_pb("Sports", "#Sports"))
-                                .button(Button::new_button_pb("Cursus", "#Cursus")
-                                .button(Button::new_button_pb("Hobbies", "#Hobbies")))));
+                                .button(Button::new_button_pb("Cursus", "#Cursus"))
+                                .button(Button::new_button_pb("Hobbies", "#Hobbies"))));
 
     BotMessenger::new()
-            .block(Block::new("Hello")
-                .cartBox(CartBox::new()
-                    .text("Hello new user"))
-                .cartBox(CartBox::new()
-                    .text("It's a new day")
-                    .button_postback("Push", "Hello"))
-                .cartBox(CartBox::new()
-                    .card(CardGeneric::new("Hello")
-                        .button(Button::new_button_pb("Welcom back Mr potter", "Hello"))
-                        .image("https://images.ladepeche.fr/api/v1/images/view/5c34fb833e454650457f60ce/large/image.jpg")
-                        .subtitle("Bouyah"))))
-            .block(Block::new("#Start")
-                .cartBox(CartBox::new()
-                    .text("New start user")))
+            .block(block_hello)
+            .block(block_nop)
+            .block(block_cv)
             .with_token_fb(&TOKEN_FB)
             .with_token_wh(&TOKEN_WH)
             .with_port(PORT)
