@@ -9,9 +9,9 @@ use api::button::Button;
 
 fn main() {
 
-    let TOKEN_FB = &std::env::var("TOKEN_FB").unwrap_or("MamaGuriba".to_string());
-    let TOKEN_WH = &std::env::var("TOKEN").unwrap_or("MamaGuriba".to_string());
-    let PORT = std::env::var("PORT").unwrap_or("7878".to_string()).parse::<u16>().unwrap_or(7878);
+    let TOKEN_FB = &std::env::var("TOKEN_FB").unwrap();
+    let TOKEN_WH = &std::env::var("TOKEN").unwrap();
+    let PORT = std::env::var("PORT").unwrap().parse::<u16>().unwrap();
 
     // BLOCKS
     let block_hello = Block::new("#Start")
