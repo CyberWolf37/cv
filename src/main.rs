@@ -33,12 +33,15 @@ fn main() {
                                 .button(Button::new_button_pb("Sports 🏈", "#Sports"))
                                 .button(Button::new_button_pb("Cursus 💼", "#Cursus"))
                                 .button(Button::new_button_pb("Hobbies 💻", "#Hobbies"))));
-                                
+
 
     BotMessenger::new()
             .block(block_hello)
             .block(block_nop)
             .block(block_cv)
+            .block_default(Block::new("default")
+                .cartBox(CartBox::new()
+                    .text("Sorry I don't understand 🐻")))
             .with_token_fb(&TOKEN_FB)
             .with_token_wh(&TOKEN_WH)
             .with_port(PORT)
