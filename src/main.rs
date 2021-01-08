@@ -18,7 +18,8 @@ fn main() {
                         .cartBox(CartBox::new()
                             .text("Bonjour 😃 comment vas-tu ?
                                 \nmoi j'ai la pêche 🎣
-                                \nVeut-tu que je te détail mon CV 📖 ?")
+                                \nVeut-tu que je te détail mon CV 📖 ?
+                                \nEn même temps ce n'est pas comme si je suis déstiné à faire autre chose!")
                             .button_postback("Oui 👍", "#CvStart")
                             .button_postback("Non 👎", "#Nop"));
 
@@ -28,7 +29,7 @@ fn main() {
 
     let block_cv = Block::new("#CvStart")
                         .cartBox(CartBox::new()
-                            .card(CardButtons::new("lol")
+                            .card(CardButtons::new("Alors commence par choisir ce que tu veux savoir.")
                                 .button(Button::new_button_pb("Sports", "#Sports"))
                                 .button(Button::new_button_pb("Cursus", "#Cursus"))
                                 .button(Button::new_button_pb("Hobbies", "#Hobbies"))));
