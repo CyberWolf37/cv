@@ -50,6 +50,7 @@ fn main() {
                             .card(CardGeneric::new("Et enfin le triathlon, car mes collègues m'y ont poussé...")
                                 .image("https://tmv.tmvtours.fr/wp-content/uploads/sites/tours/AGENDA-PHOTO10-TOURSN-MAN.jpg")
                                 .subtitle("Sa ne va en rien avec ce que j'aimais du sport, mais j'aime ça!")));
+                                
 
 
     BotMessenger::new()
