@@ -17,9 +17,9 @@ fn main() {
     let block_hello = Block::new("#Start")
                         .cartBox(CartBox::new()
                             .text("Bonjour 😃 comment vas-tu ?
-                                \rmoi j'ai la pêche 🎣
-                                \rVeut-tu que je te détail mon CV 📖 ?
-                                \rEn même temps ce n'est pas comme si je suis déstiné à faire autre chose!")
+                                \nmoi j'ai la pêche 🎣
+                                \nVeut-tu que je te détail mon CV 📖 ?
+                                \nEn même temps ce n'est pas comme si je suis déstiné à faire autre chose!")
                             .button_postback("Oui 👍", "#CvStart")
                             .button_postback("Non 👎", "#Nop"));
 
