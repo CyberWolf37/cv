@@ -6,6 +6,7 @@ use api::card::Card;
 use api::card::CardGeneric;
 use api::card::CardButtons;
 use api::button::Button;
+use api::card::DefaultAction;
 
 fn main() {
 
@@ -49,8 +50,50 @@ fn main() {
                                 .subtitle("Savant mélange de brutalité et de dépassement de soi avec une pincer de technique"))
                             .card(CardGeneric::new("Et enfin le triathlon, car mes collègues m'y ont poussé...")
                                 .image("https://tmv.tmvtours.fr/wp-content/uploads/sites/tours/AGENDA-PHOTO10-TOURSN-MAN.jpg")
-                                .subtitle("Sa ne va en rien avec ce que j'aimais du sport, mais j'aime ça!")));
-                                
+                                .subtitle("Sa ne va en rien avec ce que j'aimais du sport, mais j'aime ça!")))
+                        .cartBox(CartBox::new()
+                            .text("Veux tu revenir au menu ?")
+                            .button_postback("Oui 👍", "#CvStart")
+                            .button_postback("Non 👎", "#Nop"));
+                            
+    let block_cursus = Block::new("#Cursus")
+                        .cartBox(CartBox::new()
+                            .text("Je vais commencer cette sections par mon entrée a l'AFORP"))
+                        .cartBox(CartBox::new()
+                            .card(CardGeneric::new("L'AFORP à Asnières sur seine")
+                                .image("https://www.aforp.fr/formation-continue/wp-content/themes/aka_theme/images/logo-aforp.png")
+                                .subtitle("J'ai commencer par être Chaudronier. J'y ai fait mon BEP et mon BAC"))
+                            .card(CardGeneric::new("Ensuite J'ai Travailler a la CETIL")
+                                .image("https://3er1viui9wo30pkxh1v2nh4w-wpengine.netdna-ssl.com/wp-content/uploads/prod/sites/448/2018/06/FIVB-vball-1024x683.png")
+                                .subtitle("Une entreprise que j'ai beaucoup apprécier"))
+                            .card(CardGeneric::new("Après j'ai voulu faire un BTS CPI au lycée Dorian")
+                                .image("https://www.lycee-dorian.fr/images/template/logo_dorian.png")
+                                .subtitle("J'ai obtenue mon BTS CPI en alternance avec l'O.N.E.R.A."))
+                            .card(CardGeneric::new("Après quelques autres entreprise j'ai signée pour la SEF touraine")
+                                .image("https://lh3.googleusercontent.com/proxy/RoTILTvzV-I9kNHqMEGIhudQ0TTM0btMpIer8T8cMZLBCo-YDm0Wdunvn6td5q4wN9roPwKnuLF-94L8OAAOY5kDiImagnyoGD1lB4ujF54dwkI")
+                                .subtitle("Je fait de la préstation chez FAIVELEY WABTEC")))
+                        .cartBox(CartBox::new()
+                            .text("Veux tu revenir au menu ?")
+                            .button_postback("Oui 👍", "#CvStart")
+                            .button_postback("Non 👎", "#Nop")); 
+
+    let block_hobbies = Block::new("#Hobbies")
+                            .cartBox(CartBox::new()
+                                .text("Alors là si tu as une heure devant toi sa serais bien. Mais je vais raccourcir ma liste!"))
+                            .cartBox(CartBox::new()
+                                .card(CardGeneric::new("La programmation, plus qu'un Hobbie, j'en ai fait une auto-entreprise")
+                                    .image("https://libreshot.com/wp-content/uploads/2016/07/programming.jpg")
+                                    .subtitle("La programmation est vraiment une passion ❤️"))
+                                .card(CardGeneric::new("L'électronique")
+                                    .image("https://upload.wikimedia.org/wikipedia/commons/d/d9/Arduino_ftdi_chip-1.jpg")
+                                    .subtitle("J'aime apprendre l'électronique en reparant les objets qui ne fonctionne plus.🖥🔧"))
+                                .card(CardGeneric::new("Le jeux vidéo")
+                                    .image("https://ici.artv.ca/upload/cms/blog-content/jeux-650x366-702.jpg")
+                                    .subtitle("J'aime jouer. j'espère que un jour j'en programmerais un.")))
+                            .cartBox(CartBox::new()
+                                .text("Veux tu revenir au menu ?")
+                                .button_postback("Oui 👍", "#CvStart")
+                                .button_postback("Non 👎", "#Nop")); 
 
 
     BotMessenger::new()
@@ -58,6 +101,8 @@ fn main() {
             .block(block_nop)
             .block(block_cv)
             .block(block_sports)
+            .block(block_cursus)
+            .block(block_hobbies)
             .block_default(Block::new("default")
                 .cartBox(CartBox::new()
                     .text("Désoler je ne comprends pas 🐻")))
