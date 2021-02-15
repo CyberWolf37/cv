@@ -15,7 +15,7 @@ fn main() {
     let PORT = std::env::var("PORT").unwrap().parse::<u16>().unwrap();
 
     // BLOCKS
-    let block_credits = Block::new("#Credits")
+    let block_credits = Block::new("#Start")
                         .cartBox(CartBox::new()
                             .text("Bonjour 😃 comment vas-tu ?
                                 \nmoi j'ai la pêche 🎣
@@ -101,10 +101,10 @@ fn main() {
                                     .image("https://upload.wikimedia.org/wikipedia/commons/d/d9/Arduino_ftdi_chip-1.jpg")
                                     .subtitle("J'aime apprendre l'électronique en réparant les objets qui ne fonctionnent plus.🖥🔧"))
                                 .card(CardGeneric::new("La lecture")
-                                    .image("https://ici.artv.ca/upload/cms/blog-content/jeux-650x366-702.jpg")
+                                    .image("https://france3-regions.francetvinfo.fr/image/qKSRhbJH9Rj-agcqIEqXTjFlQeE/1200x900/regions/2020/06/09/5edf6e0648d98_nuit_de_la_lecture-4042071.jpg")
                                     .subtitle("J'aime lire. Surtout dans le domaine de la fantasy."))
                                 .card(CardGeneric::new("Le jeux vidéo")
-                                    .image("https://france3-regions.francetvinfo.fr/image/qKSRhbJH9Rj-agcqIEqXTjFlQeE/1200x900/regions/2020/06/09/5edf6e0648d98_nuit_de_la_lecture-4042071.jpg")
+                                    .image("https://ici.artv.ca/upload/cms/blog-content/jeux-650x366-702.jpg")
                                     .subtitle("J'aime jouer. j'espère qu'un jour j'en programmerais un.")))
                             .cartBox(CartBox::new()
                                 .text("Veux tu revenir au menu ?")
