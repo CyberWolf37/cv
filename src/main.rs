@@ -41,7 +41,8 @@ fn main() {
                             .card(CardButtons::new("Commence par choisir ce que tu veux savoir.")
                                 .button(Button::new_button_pb("Sports 🏈", "#Sports"))
                                 .button(Button::new_button_pb("Cursus 💼", "#Cursus"))
-                                .button(Button::new_button_pb("Hobbies 💻", "#Hobbies")))
+                                .button(Button::new_button_pb("Hobbies 💻", "#Hobbies"))))
+                        .cartBox(CartBox::new()
                             .card(CardButtons::new("Il y a aussi ...")
                                 .button(Button::new_button_pb("Profil 😷", "#Profil"))
                                 .button(Button::new_button_pb("Credits 🎓", "#Credits"))));
