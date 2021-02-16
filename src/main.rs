@@ -116,8 +116,8 @@ fn main() {
                                     .text("En toute honnêteté et vu avec ma femme ❤️ !"))
                                 .cartBox(CartBox::new()
                                     .card(CardGeneric::new("Je suis un éternel optimiste")
-                                        .image("https://i1.wp.com/olivier-roland.com/wp-content/uploads/2019/11/optimisme-personne-optimiste-croire-en-soi.jpg?resize=500%2C331&ssl=1")
-                                        .subtitle("“Je préfère vivre en optimiste et me tromper, que vivre en pessimiste et avoir toujours raison. ” Jean-Michel Guenassia"))
+                                        .image("http://ressources-plurielles.com/wp-content/uploads/2016/01/optimisme-ressources-plurielles-2.jpg")
+                                        .subtitle("L'optimisme, c'est voir les problèmes et croire aux remèdes. Laurent Roman"))
                                     .card(CardGeneric::new("Je communique ma bonne humeur")
                                         .image("http://ekladata.com/9OqLSWMIM5jYTIG5JZOlTVkrCBo@550x688.jpg")
                                         .subtitle("Il est plutôt rare de me voir triste"))
@@ -131,7 +131,9 @@ fn main() {
 
     let block_contact = Block::new("#Contact")
                                 .cartBox(CartBox::new()
-                                    .text("Voici mon e-mail borel.loic.37@gmail.com 📬")
+                                    .text("Voici mon e-mail borel.loic.37@gmail.com 📬"))
+                                .cartBox(CartBox::new()
+                                    .text("Veux tu revenir au menu ?")
                                     .button_postback("Oui 👍", "#CvStart")
                                     .button_postback("Non 👎", "#Nop"));
 
