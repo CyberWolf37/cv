@@ -7,6 +7,7 @@ use api::card::CardGeneric;
 use api::card::CardButtons;
 use api::button::Button;
 use api::card::DefaultAction;
+use std::path::Path;
 
 fn main() {
 
@@ -158,5 +159,6 @@ fn main() {
             .with_token_fb(&TOKEN_FB)
             .with_token_wh(&TOKEN_WH)
             .with_port(PORT)
+            .with_static_file(Path::new("./static"))
             .launch();
 }
