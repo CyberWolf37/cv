@@ -159,6 +159,6 @@ fn main() {
             .with_token_fb(&TOKEN_FB)
             .with_token_wh(&TOKEN_WH)
             .with_port(PORT)
-            .with_static_file("./static".to_string())
+            .with_static_file("/static".to_string())
             .launch();
 }
