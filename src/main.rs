@@ -139,8 +139,7 @@ fn main() {
                                     .button_postback("Oui 👍", "#CvStart")
                                     .button_postback("Non 👎", "#Nop"));
 
-    let mut static_path= env::var("CARGO_MANIFEST_DIR").unwrap();
-    static_path.push_str("./static");
+    let mut static_path = "./static";
     println!("static file {}",static_path);
 
     BotMessenger::new()
