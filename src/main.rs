@@ -161,4 +161,5 @@ fn main() {
             .with_port(PORT)
             .with_static_file("/static".to_string())
             .launch();
+            
 }

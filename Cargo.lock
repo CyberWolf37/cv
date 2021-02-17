@@ -148,7 +148,7 @@ dependencies = [
 [[package]]
 name = "botMessenger"
 version = "0.1.0"
-source = "git+https://github.com/CyberWolf37/bot.git?branch=master#e77ac5d44e474a76d2b5def8634674ca8dc4ca94"
+source = "git+https://github.com/CyberWolf37/bot.git?branch=master#2142e9a38afd82c1866a63bdde4b9f5d12c158af"
 dependencies = [
  "env_logger",
  "futures",
