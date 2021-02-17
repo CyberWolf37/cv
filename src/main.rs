@@ -140,7 +140,6 @@ fn main() {
                                     .button_postback("Non 👎", "#Nop"));
 
     let mut static_path = "./static";
-    println!("static file {}",static_path);
 
     BotMessenger::new()
             .block(block_hello)
@@ -162,7 +161,7 @@ fn main() {
             .with_token_fb(&TOKEN_FB)
             .with_token_wh(&TOKEN_WH)
             .with_port(PORT)
-            .with_static_file(static_path.as_str())
+            .with_static_file(static_path)
             .launch();
             
 }
