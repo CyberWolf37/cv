@@ -8,6 +8,7 @@ use api::card::CardButtons;
 use api::button::Button;
 use api::card::DefaultAction;
 use std::path::Path;
+use std::env;
 
 fn main() {
 
@@ -138,6 +139,7 @@ fn main() {
                                     .button_postback("Oui 👍", "#CvStart")
                                     .button_postback("Non 👎", "#Nop"));
 
+    let mut static_path = "./static";
 
     BotMessenger::new()
             .block(block_hello)
@@ -159,6 +161,11 @@ fn main() {
             .with_token_fb(&TOKEN_FB)
             .with_token_wh(&TOKEN_WH)
             .with_port(PORT)
+<<<<<<< HEAD
             .with_static_file("./static")
+=======
+            .with_static_file(static_path)
+>>>>>>> 2757fa088253cc81761daeee98d9c52ac609b746
             .launch();
+            
 }
