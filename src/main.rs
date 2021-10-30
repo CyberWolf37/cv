@@ -159,6 +159,6 @@ fn main() {
             .with_token_fb(&TOKEN_FB)
             .with_token_wh(&TOKEN_WH)
             .with_port(PORT)
-            .with_static_file(Path::new("./static"))
+            .with_static_file("./static")
             .launch();
 }
