@@ -161,11 +161,7 @@ fn main() {
             .with_token_fb(&TOKEN_FB)
             .with_token_wh(&TOKEN_WH)
             .with_port(PORT)
-<<<<<<< HEAD
-            .with_static_file("./static")
-=======
             .with_static_file(static_path)
->>>>>>> 2757fa088253cc81761daeee98d9c52ac609b746
             .launch();
             
 }
