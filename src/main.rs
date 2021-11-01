@@ -99,7 +99,7 @@ fn main() {
                             .cartBox(CartBox::new()
                                 .text("Alors là si tu as une heure devant toi ça serait bien. Mais je vais raccourcir ma liste!"))
                             .cartBox(CartBox::new()
-                                .card(CardGeneric::new("La programmation, plus qu'un Hobbie, j'en ai fait une auto-entreprise")
+                                .card(CardGeneric::new("La programmation, plus qu'un Hobbie, un art")
                                     .image("https://libreshot.com/wp-content/uploads/2016/07/programming.jpg")
                                     .subtitle("La programmation est vraiment une passion ❤️"))
                                 .card(CardGeneric::new("L'électronique")
